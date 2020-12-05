@@ -4,27 +4,37 @@ import GalleryList from '../GalleryList/GalleryList'
 import axios from 'axios'
 
 class App extends Component { 
+
   state = { 
-    gallery: []
+    gallery: [],
   }
-  componentDidMount(){
+
+  componentDidMount(){ 
+    console.log('component did mount')
     this.getPhotos()
   } 
 
-  getPhotos = () => { 
-      axios.get('/gallery')
-    .then(function (response) {
-      console.log(response); 
+  getPhotos = () => {
+    axios({
+      method: 'GET', 
+      url: '/gallery'
+    })
+    .then((response) => {
+      //the info we want is in the response
+      console.log('response', response.data);
       this.setState({
         gallery: response.data
       })
+      
     })
-    .catch(function (error) {
-      console.log(error);
-    });
+    .catch((error) => {
+      alert('Something bad happening in GET');
+      console.log('error', error);  
+    })
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
