@@ -7,7 +7,7 @@ class GalleryList extends Component {
     return (
       <div>
         {
-          JSON.stringify(gallery)
+          JSON.stringify(this.props.gallery)
         }
         {/* <Grid>
         { 
