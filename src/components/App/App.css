@@ -7,12 +7,15 @@
   height: 70px;
   padding: 20px;
   color: white;
-  box-shadow: 100px
 }
 
 body {
   background-color: rgb(26, 25, 25); 
 }
+
+.card-span {
+  margin: 100px; 
+ }
 
 .MuiTypography-root { 
   color: white; 

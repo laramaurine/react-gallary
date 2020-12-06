@@ -45,7 +45,7 @@ class GalleryItem extends Component {
         />
       </div> 
         <CardContent>
-          <Typography color="white">
+          <Typography>
             {<Button variant="contained" color="primary" onClick={() => {
               this.likePhoto(this.props.photo.id)
             }} >{this.props.photo.likes} &#9829;</Button>}
@@ -54,11 +54,11 @@ class GalleryItem extends Component {
       </Card> 
     } else if (this.state.clicked === 'description') { 
       renderCard =  
-      <Card style={{width:"300px", display: "inline-block", backgroundColor: "rgb(65, 64, 64)", color: "rgb(65, 64, 64)"}}>
+      <Card style={{width:"300px", display: "inline-block", backgroundColor: "rgb(65, 64, 64)"}}>
         <div className="imageDiv" onClick={(event) => this.cardClicked(event)}>
-        <CardHeader style={{color: "rgb(65, 64, 64)"}}  title={this.props.photo.title} subheader={this.props.photo.year}></CardHeader>
+        <CardHeader title={this.props.photo.title} subheader={this.props.photo.year}></CardHeader>
         <CardContent>
-          <Typography color="#FFFFFF" gutterBottom>
+          <Typography gutterBottom>
             {this.props.photo.description} 
             {<br></br>}{<br></br>}{<br></br>}{<br></br>}{<br></br>}
           </Typography>
@@ -68,7 +68,7 @@ class GalleryItem extends Component {
     }
 
     return (
-      <span>
+      <span className="card-span">
           {renderCard}
       </span>
     );
