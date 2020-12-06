@@ -3,10 +3,17 @@
 }
 
 .App-header {
-  background-color: rgb(65, 64, 64);
-  height: 70px;
+  background-image: url('./IMG_0420.jpeg');
+  /* background-color: rgb(65, 64, 64); */ 
+  background-position: 100%;
+  background-size: cover;
+  height: 60rem; 
   padding: 20px;
   color: white;
+}
+
+.App-header h1 { 
+  margin-top: 20%; 
 }
 
 body {
@@ -18,8 +25,5 @@ body {
  }
 
 .MuiTypography-root { 
-  color: white; 
-}
-.MuiTypography-body2 { 
   color: white; 
 }
