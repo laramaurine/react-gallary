@@ -13,3 +13,10 @@
 body {
   background-color: rgb(26, 25, 25); 
 }
+
+.MuiTypography-root { 
+  color: white; 
+}
+.MuiTypography-body2 { 
+  color: white; 
+}

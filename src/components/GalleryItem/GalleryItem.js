@@ -34,7 +34,7 @@ class GalleryItem extends Component {
     let renderCard
     if (this.state.clicked === 'image') { 
       renderCard = 
-      <Card variant="outlined" style={{width:"300px", display: "inline-block", backgroundColor: "rgb(65, 64, 64)"}}>
+      <Card  style={{width:"300px", display: "inline-block", backgroundColor: "rgb(65, 64, 64)"}}>
         <div className="imageDiv" onClick={(event) => this.cardClicked(event)}>
         <CardMedia
           component="img"
@@ -45,7 +45,7 @@ class GalleryItem extends Component {
         />
       </div> 
         <CardContent>
-          <Typography color="textSecondary">
+          <Typography color="white">
             {<Button variant="contained" color="primary" onClick={() => {
               this.likePhoto(this.props.photo.id)
             }} >{this.props.photo.likes} &#9829;</Button>}
@@ -54,11 +54,11 @@ class GalleryItem extends Component {
       </Card> 
     } else if (this.state.clicked === 'description') { 
       renderCard =  
-      <Card variant="outlined" style={{width:"300px", display: "inline-block"}}>
+      <Card style={{width:"300px", display: "inline-block", backgroundColor: "rgb(65, 64, 64)", color: "rgb(65, 64, 64)"}}>
         <div className="imageDiv" onClick={(event) => this.cardClicked(event)}>
-        <CardHeader title={this.props.photo.title} subheader={this.props.photo.year}></CardHeader>
+        <CardHeader style={{color: "rgb(65, 64, 64)"}}  title={this.props.photo.title} subheader={this.props.photo.year}></CardHeader>
         <CardContent>
-          <Typography color="textSecondary" gutterBottom>
+          <Typography color="#FFFFFF" gutterBottom>
             {this.props.photo.description} 
             {<br></br>}{<br></br>}{<br></br>}{<br></br>}{<br></br>}
           </Typography>
