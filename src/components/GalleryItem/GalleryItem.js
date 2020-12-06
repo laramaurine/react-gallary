@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './GalleryItem.css';
-import { Button, Card, CardHeader, CardContent, CardMedia, CardActionArea, Typography } from '@material-ui/core';
-
+import { Button, Card, CardHeader, CardContent, CardMedia, Typography} from '@material-ui/core';
 
 class GalleryItem extends Component {
   state = { 
@@ -20,6 +19,10 @@ class GalleryItem extends Component {
         clicked: 'image'
       }) 
     }
+  } 
+
+  likePhoto = (id) => { 
+    console.log('image with id', id, 'was liked')
   }
 
   render() { 
@@ -36,9 +39,14 @@ class GalleryItem extends Component {
           title="Contemplative Reptile"
         />
       </div> 
-        <CardActionArea>
-          <Button variant="contained" color="primary">like</Button>
-        </CardActionArea>
+        <CardContent>
+          <Typography color="textSecondary">
+            {this.props.photo.likes}
+            {<Button variant="contained" color="primary" onClick={() => {
+              this.likePhoto(this.props.photo.id)
+            }} >&#9829;</Button>}
+          </Typography>
+        </CardContent>
       </Card> 
     } else if (this.state.clicked === 'description') { 
       renderCard =  
@@ -51,15 +59,12 @@ class GalleryItem extends Component {
           </Typography>
         </CardContent>
       </div> 
-        <CardActionArea>
-          <Button variant="contained" color="primary">description</Button>
-        </CardActionArea>
      </Card> 
     }
 
     return (
       <span>
-        {renderCard}
+          {renderCard}
       </span>
     );
   }
