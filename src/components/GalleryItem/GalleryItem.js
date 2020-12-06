@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './GalleryItem.css';
 import { Button, Card, CardHeader, CardContent, CardMedia, Typography} from '@material-ui/core';
+import axios from 'axios'
 
 class GalleryItem extends Component {
   state = { 
@@ -22,7 +23,11 @@ class GalleryItem extends Component {
   } 
 
   likePhoto = (id) => { 
-    console.log('image with id', id, 'was liked')
+    console.log('image with id', id, 'was liked'); 
+    axios.put(`gallery/like/${id}`, {id: id})
+    .then(
+      this.props.getPhotos()
+    )
   }
 
   render() { 
