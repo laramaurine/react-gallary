@@ -34,22 +34,21 @@ class GalleryItem extends Component {
     let renderCard
     if (this.state.clicked === 'image') { 
       renderCard = 
-      <Card variant="outlined" style={{width:"300px", display: "inline-block"}}>
+      <Card variant="outlined" style={{width:"300px", display: "inline-block", backgroundColor: "rgb(65, 64, 64)"}}>
         <div className="imageDiv" onClick={(event) => this.cardClicked(event)}>
         <CardMedia
           component="img"
           alt={this.props.photo.description}
-          height="140"
+          height="100%"
           src={require(`${this.props.photo.path}`)}
           title="Contemplative Reptile"
         />
       </div> 
         <CardContent>
           <Typography color="textSecondary">
-            {this.props.photo.likes}
             {<Button variant="contained" color="primary" onClick={() => {
               this.likePhoto(this.props.photo.id)
-            }} >&#9829;</Button>}
+            }} >{this.props.photo.likes} &#9829;</Button>}
           </Typography>
         </CardContent>
       </Card> 
@@ -57,10 +56,11 @@ class GalleryItem extends Component {
       renderCard =  
       <Card variant="outlined" style={{width:"300px", display: "inline-block"}}>
         <div className="imageDiv" onClick={(event) => this.cardClicked(event)}>
-        <CardHeader title="This image header" subheader={this.props.photo.year}></CardHeader>
+        <CardHeader title={this.props.photo.title} subheader={this.props.photo.year}></CardHeader>
         <CardContent>
           <Typography color="textSecondary" gutterBottom>
-            {this.props.photo.description}
+            {this.props.photo.description} 
+            {<br></br>}{<br></br>}{<br></br>}{<br></br>}{<br></br>}
           </Typography>
         </CardContent>
       </div> 
