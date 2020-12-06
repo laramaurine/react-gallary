@@ -4,7 +4,6 @@ import GalleryList from '../GalleryList/GalleryList'
 import axios from 'axios'
 
 class App extends Component { 
-
   state = { 
     gallery: [],
   }

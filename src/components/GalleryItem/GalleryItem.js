@@ -10,7 +10,7 @@ class GalleryItem extends Component {
           component="img"
           alt={this.props.photo.description}
           height="140"
-          src={require(`${this.props.photo.path}`)}
+          src={require('../images/goat_small.jpg')}
           title="Contemplative Reptile"
         />
         <CardActionArea>
@@ -22,3 +22,5 @@ class GalleryItem extends Component {
 }
 
 export default GalleryItem;
+
+// `${this.props.photo.path}`

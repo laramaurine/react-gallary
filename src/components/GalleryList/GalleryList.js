@@ -8,15 +8,16 @@ class GalleryList extends Component {
       <div>
         {
           JSON.stringify(this.props.gallery)
-        }
-        {/* <Grid>
+        } 
+        <img src={require(`${this.props.gallery}`)}></img> */}
+        <Grid>
         { 
           
-            galleryItems.map((item) => <GalleryItem photo={item} />)
+          this.props.gallery.map((item) => <GalleryItem photo={item} />)
           
         }
-        </Grid> */}
-      </div>
+        </Grid>
+      </div>        
     );
   }
 }
